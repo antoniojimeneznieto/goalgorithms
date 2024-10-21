@@ -11,4 +11,10 @@ func main() {
 	b = &a // Assigning the address of a to b
 	fmt.Printf("The addresses of a and b are %p and %p and the values are %v and %v\n", &a, b, a, *b)
 
+	// Slices contains pointers
+	var c []int = []int{1, 2, 3}
+	var d []int = c // d is a slice that points to the same underlying array as c
+
+	d[0] = 10
+	fmt.Println("the value of c[0] is", c[0], "and the value of d[0] is", d[0])
 }
