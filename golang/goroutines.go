@@ -23,11 +23,11 @@ func main() {
 }
 
 func dbCall(i int) {
+	defer wg.Done()
 	var delay float32 = 2000
 	time.Sleep(time.Duration(delay) * time.Millisecond)
 	save(dbData[i%len(dbData)])
 	log()
-	wg.Done()
 }
 
 func save(result string) {
